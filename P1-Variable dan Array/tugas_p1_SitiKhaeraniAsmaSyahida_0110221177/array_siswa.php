@@ -45,5 +45,30 @@ OCTYPE html>
                 ?>
             </tbody>
         </table>
+        
+           <hr>
+           <h3>Daftar Nilai Siswa</h3>
+           <table border="1" width="100%">
+               <thead>
+                   <th>No</th>
+                   <th>NIM</th>
+                   <th>UTS</th>
+                   <th>UAS</th>
+                   <th>Tugas</th>
+                   <th>Nilai Akhir</th>
+               </thead>
+               <tbody>
+                   <?php foreach($ar_nilai as $key):?>
+                       <tr>
+                           <td><?= $key['id']?></td>
+                           <td><?= $key['nim']?></td>
+                           <td><?= $key['uts']?></td>
+                           <td><?= $key['uas']?></td>
+                           <td><?= $key['tugas']?></td>
+                           <td><?= number_format(($key['uts'] + $key['uas']+$key['tugas'])/3,2,',','.')?></td>
+                       </tr>
+                   <?php endforeach;?>
+               </tbody>
+           </table>
     </body>
 </html>
